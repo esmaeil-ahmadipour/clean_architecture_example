@@ -14,7 +14,7 @@ class AppRouteManager {
         builder: (context, state) => SplashScreen(),
       ),
       GoRoute(
-        path:AppRoute.login.fullPath,
+        path: AppRoute.login.fullPath,
         builder: (context, state) => LoginScreen(),
       ),
       GoRoute(

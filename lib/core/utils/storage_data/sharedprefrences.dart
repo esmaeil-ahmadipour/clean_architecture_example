@@ -12,7 +12,7 @@ class SharedPreferencesUtil {
   }
 
   static void saveData(String key, String value) {
-   getIt<SharedPreferences>().setString(key, value);
+    getIt<SharedPreferences>().setString(key, value);
   }
 
   static dynamic getData(String key) {

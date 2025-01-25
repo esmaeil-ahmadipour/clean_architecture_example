@@ -10,6 +10,10 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void redirectRoute() {
+      context.go(AppRoute.details.fullPath);
+    }
+
     return Scaffold(
       appBar: AppBar(title: Text(AppStringsKeys.login)),
       body: Center(
@@ -19,7 +23,7 @@ class LoginScreen extends StatelessWidget {
               SharedPreferencesKeys.isLoggedIn,
               value: true,
             );
-            context.go(AppRoute.details.fullPath);
+            redirectRoute();
           },
           child: Text(AppStringsKeys.login),
         ),

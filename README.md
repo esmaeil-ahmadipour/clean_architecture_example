@@ -1,16 +1,35 @@
-# clean_architecture_example
+# Login Simulator
 
-A clean architecture example showcasing a simulated login process and displaying user information. Designed with best practices for maintainable and scalable software development.
+A simple login simulation app built with Flutter. The app allows users to:
+1. Enter their phone number.
+2. Validate the input.
+3. View user information, including:
+    - First Name
+    - Last Name
+    - Phone Number
+    - Account Balance
 
-## Getting Started
+## Key Features
+- Built on Flutter with clean architecture principles.
+- State management handled using BLoC.
 
-This project is a starting point for a Flutter application.
+## Project Structure
+The project is organized into three main layers following clean architecture:
+1. **Presentation Layer**: Handles the UI and interactions.
+2. **Domain Layer**: Contains business logic and use cases.
+3. **Data Layer**: Manages data sources (e.g., API or local storage).
 
-A few resources to get you started if this is your first Flutter project:
+## Prerequisites
+- Flutter version: **3.27.3** Release Date : 2025/1/21
+- Dart SDK: Included with Flutter
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## How to Run
+1. Clone this repository.
+2. Run `flutter pub get` to install dependencies.
+3. Use `flutter run` to launch the app on your emulator or device.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Tech Stack
+- **Flutter**: For building the cross-platform application.
+- **BLoC**: For managing application state efficiently.
+
+Enjoy exploring the app! 🚀  

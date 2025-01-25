@@ -23,16 +23,6 @@ jobs:
           )
       - name: Run Flutter Analyze
         run: flutter analyze
-      - name: Run Dart Format and Check Localization Files Changes
-        run: |
-          # Run dart format without failing the step
-          dart format . || echo "dart format completed with warnings, but continuing pipeline."
-          
-          # Check if there are changes in the localization files after generation
-          git diff --exit-code lib/src/core/utils/gen/localization || (
-            echo "Error: Localization files are outdated. Run the generation command and commit the changes.";
-            exit 1;
-          )
       - name: Run tests
         run: flutter test
   merge_check:

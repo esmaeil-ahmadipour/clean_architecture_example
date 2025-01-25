@@ -1,5 +1,5 @@
 import 'package:clean_architecture_example/features/details/details_screen.dart';
-import 'package:clean_architecture_example/features/login/login_screen.dart';
+import 'package:clean_architecture_example/features/login/presentation/screen/login_screen.dart';
 import 'package:clean_architecture_example/features/shared/router/app_route_enum.dart';
 import 'package:clean_architecture_example/features/splash/splash_screen.dart';
 import 'package:go_router/go_router.dart';

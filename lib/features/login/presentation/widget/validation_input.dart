@@ -1,5 +1,5 @@
-import 'package:clean_architecture_example/features/shared/keys/app_strings_keys.dart';
-import 'package:clean_architecture_example/features/shared/theme/app_colors.dart';
+import 'package:clean_architecture_example/core/constants/app_colors.dart';
+import 'package:clean_architecture_example/core/constants/app_strings_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

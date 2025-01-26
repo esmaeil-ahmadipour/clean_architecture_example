@@ -1,4 +1,4 @@
-import 'package:clean_architecture_example/features/shared/keys/app_strings_keys.dart';
+import 'package:clean_architecture_example/core/constants/app_strings_keys.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {

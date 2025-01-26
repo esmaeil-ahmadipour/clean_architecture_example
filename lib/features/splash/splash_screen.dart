@@ -1,6 +1,6 @@
+import 'package:clean_architecture_example/core/constants/sharedpreferences_keys.dart';
+import 'package:clean_architecture_example/core/router/app_route_enum.dart';
 import 'package:clean_architecture_example/core/utils/storage_data/sharedprefrences.dart';
-import 'package:clean_architecture_example/features/shared/keys/sharedpreferences_keys.dart';
-import 'package:clean_architecture_example/features/shared/router/app_route_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

@@ -1,4 +1,4 @@
-import 'package:clean_architecture_example/features/shared/keys/app_strings_keys.dart';
+import 'package:clean_architecture_example/core/constants/app_strings_keys.dart';
 import 'package:rxdart/rxdart.dart';
 
 class PhoneNumberValidator {
@@ -7,6 +7,10 @@ class PhoneNumberValidator {
   // Stream for the phone number with debounce
   Stream<String> get phoneStream =>
       _phoneController.stream.debounceTime(Duration(milliseconds: 300));
+
+  // Method to get current phone number value
+  String get currentPhoneNumber => _phoneController.value;
+
 
   // Stream for button enabled status
   Stream<bool> get isSubmitEnabledStream =>

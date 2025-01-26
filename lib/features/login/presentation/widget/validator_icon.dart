@@ -1,4 +1,4 @@
-import 'package:clean_architecture_example/features/shared/theme/app_colors.dart';
+import 'package:clean_architecture_example/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ValidationIcon extends StatelessWidget {

@@ -11,6 +11,7 @@ analyzer:
     strict-casts: true
     strict-inference: true
     strict-raw-types: true
+
 linter:
   rules:
     - always_declare_return_types

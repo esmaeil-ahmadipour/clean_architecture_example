@@ -43,7 +43,7 @@ class _FormSectionState extends State<FormSection> {
               SizedBox(
                 width: 300,
                 child: ExcludeSemantics(
-                  // TODO(Esmaeil): using `ExcludeSemantics` for linux bug.
+                  // using `ExcludeSemantics` for linux bug.
                   child: StreamBuilder<String>(
                     stream: bloc.errorMessageStream,
                     builder: (context, snapshot) {

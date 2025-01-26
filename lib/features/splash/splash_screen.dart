@@ -1,6 +1,6 @@
+import 'package:clean_architecture_example/core/constants/sharedpreferences_keys.dart';
+import 'package:clean_architecture_example/core/router/app_route_enum.dart';
 import 'package:clean_architecture_example/core/utils/storage_data/sharedprefrences.dart';
-import 'package:clean_architecture_example/features/shared/keys/sharedpreferences_keys.dart';
-import 'package:clean_architecture_example/features/shared/router/app_route_enum.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -13,35 +13,39 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.deepPurple.shade700,
+      body: Center(
+        child: CircularProgressIndicator(
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  @override
   void initState() {
     super.initState();
-    _checkUserStatus();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkUserStatus();
+    });
   }
 
   Future<void> _checkUserStatus() async {
     final isLoggedIn = SharedPreferencesUtil.getBoolData(
       SharedPreferencesKeys.isLoggedIn,
     );
-
-    changeRoute(isLoggedIn: isLoggedIn);
+    Future.delayed(Duration(seconds: 3), () {
+      changeRoute(isLoggedIn: isLoggedIn);
+    });
   }
 
   void changeRoute({required bool? isLoggedIn}) {
     if (isLoggedIn == true) {
-      // If user is logged in, navigate to Details screen
       context.go(AppRoute.details.fullPath);
     } else {
-      // If user is not logged in, navigate to Login screen
       context.go(AppRoute.login.fullPath);
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: CircularProgressIndicator(), // Splash screen loading indicator
-      ),
-    );
   }
 }

@@ -26,7 +26,6 @@ import 'package:dio/dio.dart';
 /// retrieval. It can be `null` if no error occurred.
 ///
 abstract class RemoteDataState<T> {
-
   const RemoteDataState(this.remoteData, this.error);
   final T? remoteData;
   final DioException? error;

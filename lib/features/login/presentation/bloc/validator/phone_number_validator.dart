@@ -11,7 +11,6 @@ class PhoneNumberValidator {
   // Method to get current phone number value
   String get currentPhoneNumber => _phoneController.value;
 
-
   // Stream for button enabled status
   Stream<bool> get isSubmitEnabledStream =>
       phoneStream.map(_isIranianPhoneNumber);

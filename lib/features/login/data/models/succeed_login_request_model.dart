@@ -7,7 +7,7 @@ part 'succeed_login_request_model.g.dart';
 class SucceedLoginRequestModel with _$SucceedLoginRequestModel {
   const factory SucceedLoginRequestModel({
     required String token,
-   }) = _SucceedLoginRequestModel;
+  }) = _SucceedLoginRequestModel;
 
   factory SucceedLoginRequestModel.fromJson(Map<String, dynamic> json) =>
       _$SucceedLoginRequestModelFromJson(json);

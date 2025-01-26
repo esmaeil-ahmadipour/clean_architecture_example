@@ -4,7 +4,7 @@ part 'login_request_params.freezed.dart';
 
 part 'login_request_params.g.dart';
 
- @freezed
+@freezed
 class LoginRequestParams with _$LoginRequestParams {
   factory LoginRequestParams({
     String? mobilNumber,

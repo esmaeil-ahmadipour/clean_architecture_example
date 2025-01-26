@@ -64,10 +64,12 @@ class _FormSectionState extends State<FormSection> {
               final isSubmitEnabled = snapshot.data ?? false;
               return BlocConsumer<LoginRequestBloc, LoginRequestState>(
                 listener: (context, state) {
-                  state.whenOrNull(loaded: (data) {
-                    showToast(context, 'token:\n${data.token}');
-                    Future.delayed(Duration(seconds: 2), redirect);
-                  });
+                  state.whenOrNull(
+                    loaded: (data) {
+                      showToast(context, 'token:\n${data.token}');
+                      Future.delayed(Duration(seconds: 2), redirect);
+                    },
+                  );
                 },
                 builder: (context, state) {
                   return SubmitButton(

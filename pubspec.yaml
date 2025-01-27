@@ -2,7 +2,7 @@ name: clean_architecture_example
 description: "A clean architecture example showcasing a simulated login process and displaying user information. Designed with best practices for maintainable and scalable software development."
 publish_to: 'none'
 
-version: 1.1.0+2
+version: 1.2.0+3
 
 environment:
   sdk: ^3.6.1

@@ -1,5 +1,7 @@
+import 'package:clean_architecture_example/core/constants/sharedpreferences_keys.dart';
 import 'package:clean_architecture_example/core/enums/api_states.dart';
-import 'package:clean_architecture_example/core/router/app_route_enum.dart';
+import 'package:clean_architecture_example/core/utils/storage_data/sharedprefrences.dart';
+import 'package:clean_architecture_example/features/details/core/router/router.dart';
 import 'package:clean_architecture_example/features/login/data/params/login_request_params.dart';
 import 'package:clean_architecture_example/features/login/presentation/bloc/api/login_request_bloc.dart';
 import 'package:clean_architecture_example/features/login/presentation/bloc/validator/phone_number_validator.dart';
@@ -65,7 +67,12 @@ class _FormSectionState extends State<FormSection> {
               return BlocConsumer<LoginRequestBloc, LoginRequestState>(
                 listener: (context, state) {
                   state.whenOrNull(
-                    loaded: (data) {
+                    loaded: (data) async {
+                      SharedPreferencesUtil.saveData(
+                        SharedPreferencesKeys.storedToken,
+                        data.token,
+                      );
+
                       showToast(context, 'token:\n${data.token}');
                       Future.delayed(Duration(seconds: 2), redirect);
                     },
@@ -107,7 +114,7 @@ class _FormSectionState extends State<FormSection> {
   }
 
   void redirect() {
-    context.go(AppRoute.details.fullPath);
+    context.go(UserDetailsRouter.routePath);
   }
 
   void showToast(BuildContext context, String data) {

@@ -1,6 +1,7 @@
 import 'package:clean_architecture_example/core/constants/sharedpreferences_keys.dart';
-import 'package:clean_architecture_example/core/router/app_route_enum.dart';
 import 'package:clean_architecture_example/core/utils/storage_data/sharedprefrences.dart';
+import 'package:clean_architecture_example/features/details/core/router/router.dart';
+import 'package:clean_architecture_example/features/login/core/router/router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -33,19 +34,19 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> _checkUserStatus() async {
-    final isLoggedIn = SharedPreferencesUtil.getBoolData(
-      SharedPreferencesKeys.isLoggedIn,
+    final storedToken = SharedPreferencesUtil.getData(
+      SharedPreferencesKeys.storedToken,
     );
     Future.delayed(Duration(seconds: 3), () {
-      changeRoute(isLoggedIn: isLoggedIn);
+      changeRoute(isLoggedIn: !(storedToken == null || storedToken! == ''));
     });
   }
 
   void changeRoute({required bool? isLoggedIn}) {
     if (isLoggedIn == true) {
-      context.go(AppRoute.details.fullPath);
+      context.go(UserDetailsRouter.routePath);
     } else {
-      context.go(AppRoute.login.fullPath);
+      context.go(LoginRouter.routePath);
     }
   }
 }

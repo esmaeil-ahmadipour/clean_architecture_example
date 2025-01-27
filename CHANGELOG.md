@@ -1,3 +1,20 @@
+# [1.2.0+3](https://github.com/esmaeil-ahmadipour/clean_architecture_example/pull/6)
+
+### Feature
+- **userDetails**: Added and created the `user_details` module:
+  - Separated route files for better organization.
+  - Changed shared preferences key for improved clarity.
+  - Created the `user_details` module with a mocked API call.
+  - Added some customized widgets to enhance user interaction.
+
+### Chore
+- Added the `shimmer` package to improve UI loading animations.
+
+### Test
+- **core:base:services**: Added safety test for the care API:
+  - Ensured the care API call always uses the real API.
+  - Excluded mock API during the pipeline execution.
+
 # [1.1.0+2](https://github.com/esmaeil-ahmadipour/clean_architecture_example/pull/4)
 
 ### Feature

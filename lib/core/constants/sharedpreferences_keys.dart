@@ -1,3 +1,3 @@
 class SharedPreferencesKeys {
-  static const String isLoggedIn = 'isLoggedIn';
+  static const String storedToken = 'storedToken';
 }
